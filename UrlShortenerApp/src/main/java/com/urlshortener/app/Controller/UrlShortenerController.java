@@ -21,7 +21,7 @@ public class UrlShortenerController
     private UrlValidator requestValidator;
 
     @RequestMapping(value = "/createShortUrl" , method = RequestMethod.POST , consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseModel<Url> create(@RequestBody UrlRequest urlRequest)
+    public ResponseModel<Url> create(@RequestBody UrlRequest urlRequest, @RequestParam("callingUserId") String callingUserId)
     {
 
         System.out.println("request : " + urlRequest);

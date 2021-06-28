@@ -14,7 +14,7 @@
     <bytecodeTargetLevel>
       <module name="UrlShortener" target="1.8" />
       <module name="UrlShortenerApp" target="16" />
-      <module name="UrlShortenerContracts" target="16" />
+      <module name="UrlShortenerContracts" target="15" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
