@@ -8,6 +8,7 @@ import com.urlshortener.app.Validator.UrlValidator;
 import com.urlshortener.contracts.Requests.UrlRequest;
 import com.urlshortener.contracts.Responses.ResponseModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -65,7 +66,8 @@ public class UrlShortenerController
         }
         catch (IOException e)
         {
-            //swallow
+            responseModel.setMessage("Error please try again");
+            responseModel.setHttpStatus(HttpStatus.BAD_GATEWAY);
         }
         catch (SError e)
         {

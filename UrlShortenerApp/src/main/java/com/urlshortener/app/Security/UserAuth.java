@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 
 import java.io.IOException;
@@ -33,12 +34,12 @@ public class UserAuth
             }
             else
             {
-                throw new SError("User not registered with us.", HttpStatus.FORBIDDEN);
+                throw new SError(": User not registered with us.", HttpStatus.FORBIDDEN);
             }
         }
         else
         {
-            throw new SError("Could not authenticate user. Pls try again", HttpStatus.INTERNAL_SERVER_ERROR);
+            throw new SError(" : Could not authenticate user. Pls try again", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
