@@ -13,8 +13,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="UrlShortener" target="1.8" />
-      <module name="UrlShortenerApp" target="16" />
-      <module name="UrlShortenerContracts" target="15" />
+      <module name="UrlShortenerApp" target="1.8" />
+      <module name="UrlShortenerContracts" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

@@ -1,25 +1,28 @@
 package com.urlshortener.app.Client;
 
 import okhttp3.OkHttpClient;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+import javax.annotation.PostConstruct;
 
 @Configuration
 public class AuthClientConfig
 {
-    @Value("${auth.base.url}")
-    private String BASE_URL;
+    private static final String BASE_URL = "http://localhost:8080/user/";
 
     private Retrofit retrofit;
 
-    public AuthClientConfig(Retrofit retrofit) {
-
+    public AuthClientConfig()
+    {
+        System.out.println("base url : " + BASE_URL);
         OkHttpClient client = new OkHttpClient();
 
-        this.retrofit = new Retrofit.Builder()
+        retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)

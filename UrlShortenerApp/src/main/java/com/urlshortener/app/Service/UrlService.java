@@ -49,7 +49,8 @@ public class UrlService
     {
         Optional<List<Url>> urlList = urlRepository.findShortUrl(shortUrl);
         ResponseModel<Url> responseModel = new ResponseModel<>();
-        if (urlList.isPresent() && !urlList.get().isEmpty())
+        if (urlList.isPresent() && !urlList.get().isEmpty()
+        )
         {
             responseModel.setData(urlList.get().get(0));
             responseModel.setMessage("URL returned successfully");
